@@ -1,0 +1,1 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/aace2ae08dba61324afa/maintainability)](https://codeclimate.com/github/Mormur/frontend-project-lvl2/maintainability)
