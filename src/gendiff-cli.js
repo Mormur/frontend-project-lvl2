@@ -5,7 +5,7 @@ import _ from 'lodash';
 const genDiff = (path1, path2) => {
   const wholePath1 = path.resolve(process.cwd(), path1);
   const wholePath2 = path.resolve(process.cwd(), path2);
-  
+
   const fileContent1 = fs.readFileSync(wholePath1, 'utf8');
   const fileContent2 = fs.readFileSync(wholePath2, 'utf8');
 
@@ -19,17 +19,15 @@ const genDiff = (path1, path2) => {
 
   const result = allSortedKeys.map((key) => {
     if (!_.has(dataFile1, key)) {
-        return ` + ${key}: ${dataFile2[key]}`;
+      return ` + ${key}: ${dataFile2[key]}`;
     }
     if (!_.has(dataFile2, key)) {
-        return ` - ${key}: ${dataFile1[key]}`;
+      return ` - ${key}: ${dataFile1[key]}`;
     }
     if (dataFile1[key] !== dataFile2[key]) {
-        return ` - ${key}: ${dataFile1[key]}\n + ${key}: ${dataFile2[key]}`;
+      return ` - ${key}: ${dataFile1[key]}\n + ${key}: ${dataFile2[key]}`;
     }
-    if (dataFile1[key] === dataFile2[key]) {
-        return `   ${key}: ${dataFile1[key]}`;
-    }
+    return `   ${key}: ${dataFile1[key]}`;
   });
 
   console.log(`{\n${result.join('\n')}\n}`);
