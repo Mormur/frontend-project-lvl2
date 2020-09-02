@@ -19,18 +19,19 @@ const genDiff = (path1, path2) => {
 
   const result = allSortedKeys.map((key) => {
     if (!_.has(dataFile1, key)) {
-      return ` + ${key}: ${dataFile2[key]}`;
+      return `    + ${key}: ${dataFile2[key]}`;
     }
     if (!_.has(dataFile2, key)) {
-      return ` - ${key}: ${dataFile1[key]}`;
+      return `    - ${key}: ${dataFile1[key]}`;
     }
     if (dataFile1[key] !== dataFile2[key]) {
-      return ` - ${key}: ${dataFile1[key]}\n + ${key}: ${dataFile2[key]}`;
+      return `    - ${key}: ${dataFile1[key]}\n    + ${key}: ${dataFile2[key]}`;
     }
-    return `   ${key}: ${dataFile1[key]}`;
+    return `      ${key}: ${dataFile1[key]}`;
   });
 
-  console.log(`{\n${result.join('\n')}\n}`);
+  console.log(`{\n${result.join('\n')}\n  }`);
+  return `{\n${result.join('\n')}\n  }`;
 };
 
 export default genDiff;
