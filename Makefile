@@ -4,6 +4,9 @@ install:
 publish:
 	npm publish --dry-run
 
+install-deps:
+	npm ci
+
 make lint:
 	npx eslint .
 
@@ -12,3 +15,5 @@ test:
 	
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
+	
+.PHONY: test
