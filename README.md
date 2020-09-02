@@ -4,9 +4,7 @@
 
 > made by marchkatte@gmail.com
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/aace2ae08dba61324afa/maintainability)](https://codeclimate.com/github/Mormur/frontend-project-lvl2/maintainability)
-
-![Node.js CI](https://github.com/Mormur/frontend-project-lvl2/workflows/Node.js%20CI/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/aace2ae08dba61324afa/maintainability)](https://codeclimate.com/github/Mormur/frontend-project-lvl2/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/aace2ae08dba61324afa/test_coverage)](https://codeclimate.com/github/Mormur/frontend-project-lvl2/test_coverage) ![Node.js CI](https://github.com/Mormur/frontend-project-lvl2/workflows/Node.js%20CI/badge.svg)
 
 ## Setup
 ```
