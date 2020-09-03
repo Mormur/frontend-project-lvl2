@@ -21,6 +21,9 @@ Type `gendiff` and paths of two files in your console to compare them.
 ### YML demo:
 [![asciicast](https://asciinema.org/a/YqGQO3ObhBYqEtHoRL6MUGVQR.svg)](https://asciinema.org/a/YqGQO3ObhBYqEtHoRL6MUGVQR)
 
+### INI demo:
+[![asciicast](https://asciinema.org/a/K1kihqMOpRiA03LV9VbRnMOFa.svg)](https://asciinema.org/a/K1kihqMOpRiA03LV9VbRnMOFa)
+
 ---
 *If you have any troubles with this product or just want to share your opinion, please feel free to contact me:*
 **marchkatte@gmail.com**
