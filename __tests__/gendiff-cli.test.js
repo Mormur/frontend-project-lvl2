@@ -14,6 +14,13 @@ const object1 = {
   follow: false,
 };
 
+const objectini = {
+  host: 'hexlet.io',
+  timeout: '50',
+  proxy: '123.234.53.22',
+  follow: false,
+};
+
 const expected = `{
   - follow: false
     host: hexlet.io
@@ -26,7 +33,7 @@ const expected = `{
 test('getDataOfFile', () => {
   expect(getDataOfFile(getFixturePath('before.json'))).toEqual(object1);
   expect(getDataOfFile(getFixturePath('before.yml'))).toEqual(object1);
-  expect(getDataOfFile(getFixturePath('before.ini'))).toEqual(object1);
+  expect(getDataOfFile(getFixturePath('before.ini'))).toEqual(objectini);
 });
 
 test('genDiff', () => {
