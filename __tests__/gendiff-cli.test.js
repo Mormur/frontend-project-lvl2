@@ -26,9 +26,11 @@ const expected = `{
 test('getDataOfFile', () => {
   expect(getDataOfFile(getFixturePath('before.json'))).toEqual(object1);
   expect(getDataOfFile(getFixturePath('before.yml'))).toEqual(object1);
+  expect(getDataOfFile(getFixturePath('before.ini'))).toEqual(object1);
 });
 
 test('genDiff', () => {
   expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json'))).toEqual(expected);
   expect(genDiff(getFixturePath('before.yml'), getFixturePath('after.yml'))).toEqual(expected);
+  expect(genDiff(getFixturePath('before.ini'), getFixturePath('after.ini'))).toEqual(expected);
 });
