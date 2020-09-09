@@ -1,0 +1,118 @@
+[
+  {
+    "key": "common",
+    "objects": [
+        {
+          "key": "follow",
+          "newValue": false,
+          "status": "added"
+        },
+        {
+          "key": "setting1",
+          "sameValue": "Value 1",
+          "status": "unchanged"
+        },
+        {
+          "key": "setting2",
+          "oldValue": 200,
+          "status": "deleted"
+        },
+        {
+          "key": "setting3",
+          "newValue": {
+            "key": "value"
+          },
+          "oldValue": true,
+          "status": "changed"
+        },
+        {
+          "key": "setting4",
+          "newValue": "blah blah",
+          "status": "added"
+        },
+        {
+          "key": "setting5",
+          "newValue": {
+            "key5": "value5"
+          },
+          "status": "added"
+        },
+        {
+          "key": "setting6",
+          "objects": [
+              {
+                "key": "doge",
+                "objects": [
+                    {
+                      "key": "wow",
+                      "newValue": "so much",
+                      "oldValue": "too much",
+                      "status": "changed"
+                    }
+                  ],
+                "status": "tree"
+              },
+              {
+                "key": "key",
+                "sameValue": "value",
+                "status": "unchanged"
+              },
+              {
+                "key": "ops",
+                "newValue": "vops",
+                "status": "added"
+              }
+            ],
+          "status": "tree"
+        }
+      ],
+    "status": "tree"
+  },
+  {
+    "key": "group1",
+    "objects": [
+        {
+          "key": "baz",
+          "newValue": "bars",
+          "oldValue": "bas",
+          "status": "changed"
+        },
+        {
+          "key": "foo",
+          "sameValue": "bar",
+          "status": "unchanged"
+        },
+        {
+          "key": "nest",
+          "newValue": "str",
+          "oldValue": {
+            "key": "value"
+          },
+          "status": "changed"
+        }
+      ],
+    "status": "tree"
+  },
+  {
+    "key": "group2",
+    "oldValue": {
+      "abc": 12345,
+      "deep": {
+        "id": 45
+      }
+    },
+    "status": "deleted"
+  },
+  {
+    "key": "group3",
+    "newValue": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
+      },
+      "fee": 100500
+    },
+    "status": "added"
+  }
+]
