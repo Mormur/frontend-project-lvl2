@@ -8,6 +8,9 @@ const makeFormat = (data, format) => {
   if (format === 'plain') {
     return makePlain(data);
   }
+  if (format === 'json') {
+    return JSON.stringify(data);
+  }
   return makeStylish(data);
 };
 
