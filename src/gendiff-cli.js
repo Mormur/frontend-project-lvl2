@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import parser from './parsers.js';
 import getDiff from './getdiff';
-import makeFormat from './formatters/stylish.js';
+import makeFormat from './formatters/index.js';
 
 export const getFile = (filepath) => {
   const wholePath = path.resolve(process.cwd(), filepath);
@@ -15,10 +15,10 @@ export const getDataOfFile = (filepath) => {
   return parse(file);
 };
 
-const genDiff = (path1, path2) => {
+const genDiff = (path1, path2, format) => {
   const dataOfFile1 = getDataOfFile(path1);
   const dataOfFile2 = getDataOfFile(path2);
-  return makeFormat(getDiff(dataOfFile1, dataOfFile2));
+  return makeFormat(getDiff(dataOfFile1, dataOfFile2), format);
 };
 
 export default genDiff;

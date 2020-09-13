@@ -13,24 +13,22 @@ const formatValue = (value, level) => {
 
 const dataFormat = (data, level = 1) => {
   const result = data.flatMap((item) => {
-    if (item.status === 'added') {
-      return `${gap(level)}+ ${item.key}: ${formatValue(item.newValue, level)}`;
+    switch (item.status) {
+      case 'added':
+        return `${gap(level)}+ ${item.key}: ${formatValue(item.newValue, level)}`;
+      case 'changed':
+        return `${gap(level)}- ${item.key}: ${formatValue(item.oldValue, level)}\n${gap(level)}+ ${item.key}: ${formatValue(item.newValue, level)}`;
+      case 'deleted':
+        return `${gap(level)}- ${item.key}: ${formatValue(item.oldValue, level)}`;
+      case 'tree':
+        return `${gap(level + 1)}${item.key}: {\n${dataFormat(item.objects, level + 2)}\n${gap(level + 1)}}`;
+      default:
+        return `${gap(level)}  ${item.key}: ${formatValue(item.sameValue, level)}`;
     }
-    if (item.status === 'changed') {
-      return `${gap(level)}- ${item.key}: ${formatValue(item.oldValue, level)}\n${gap(level)}+ ${item.key}: ${formatValue(item.newValue, level)}`;
-    }
-    if (item.status === 'deleted') {
-      return `${gap(level)}- ${item.key}: ${formatValue(item.oldValue, level)}`;
-    }
-    if (item.status === 'tree') {
-      return `${gap(level + 1)}${item.key}: {\n${dataFormat(item.objects, level + 2)}\n${gap(level + 1)}}`;
-    }
-    return `${gap(level)}  ${item.key}: ${formatValue(item.sameValue, level)}`;
   });
-
   return result.join('\n');
 };
 
-const makeFormat = (data) => `{\n${dataFormat(data)}\n}`;
+const makeStylish = (data) => `{\n${dataFormat(data)}\n}`;
 
-export default makeFormat;
+export default makeStylish;

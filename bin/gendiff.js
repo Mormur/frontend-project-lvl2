@@ -9,7 +9,7 @@ program
   .arguments('<filepath1> <filepath2>')
   .option('-f, --format [type]', 'output format', 'stylish')
   .action((filepath1, filepath2) => {
-    genDiff(filepath1, filepath2); // when there are new formatters - add a command program.format
+    genDiff(filepath1, filepath2, program.format);
   });
 
 program.parse(process.argv);
