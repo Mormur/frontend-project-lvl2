@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import parser from './parsers.js';
-import getDiff from './getdiff';
+import getDiff from './getdiff.js';
 import makeFormat from './formatters/index.js';
 
 export const getFile = (filepath) => {
