@@ -25,13 +25,13 @@ Type `gendiff` and paths of two files in your console to compare them. Default o
 [![asciicast](https://asciinema.org/a/K1kihqMOpRiA03LV9VbRnMOFa.svg)](https://asciinema.org/a/K1kihqMOpRiA03LV9VbRnMOFa)
 
 ### Stylish format demo:
-
+[![asciicast](https://asciinema.org/a/rPeUvmTBUMqE1aO711HTyE2Zt.svg)](https://asciinema.org/a/rPeUvmTBUMqE1aO711HTyE2Zt)
 
 ### Plain format demo:
-
+[![asciicast](https://asciinema.org/a/33pBouqjN5rmONUeyJlzYS7tj.svg)](https://asciinema.org/a/33pBouqjN5rmONUeyJlzYS7tj)
 
 ### JSON format demo:
-
+[![asciicast](https://asciinema.org/a/G5Iu4Myi2yK5KuDIP06YsCkJ4.svg)](https://asciinema.org/a/G5Iu4Myi2yK5KuDIP06YsCkJ4)
 
 ---
 *If you have any troubles with this product or just want to share your opinion, please feel free to contact me:*
