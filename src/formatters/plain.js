@@ -11,7 +11,7 @@ const formatValue = (value) => {
 };
 
 const makePlain = (diff) => {
-  const dataFormat = (data, path) => {
+  const dataFormat = (data, path = []) => {
     const result = data.flatMap((item) => {
       const actualPath = [...path, item.key];
       const fullPath = actualPath.join('.');
@@ -24,13 +24,15 @@ const makePlain = (diff) => {
           return `Property '${fullPath}' was updated. From ${formatValue(item.oldValue)} to ${formatValue(item.newValue)}`;
         case 'tree':
           return dataFormat(item.objects, actualPath);
-        default:
+        case 'unchanged':
           return [];
+        default:
+          throw new Error(`${item.status} is unknown status!`);
       }
     });
     return result.join('\n');
   };
-  return dataFormat(diff, []);
+  return dataFormat(diff);
 };
 
 export default makePlain;

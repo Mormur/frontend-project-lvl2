@@ -13,7 +13,7 @@ $ sudo npm link
 
 ## Using
 
-Type `gendiff` and paths of two files in your console to compare them.
+Type `gendiff` and paths of two files in your console to compare them. Default output format is stylish, but you can choose plain or json format too.
 
 ### JSON demo:
 [![asciicast](https://asciinema.org/a/WAGyBdNrQMyGPVLUJJksgZyoU.svg)](https://asciinema.org/a/WAGyBdNrQMyGPVLUJJksgZyoU)
@@ -23,6 +23,15 @@ Type `gendiff` and paths of two files in your console to compare them.
 
 ### INI demo:
 [![asciicast](https://asciinema.org/a/K1kihqMOpRiA03LV9VbRnMOFa.svg)](https://asciinema.org/a/K1kihqMOpRiA03LV9VbRnMOFa)
+
+### Stylish format demo:
+
+
+### Plain format demo:
+
+
+### JSON format demo:
+
 
 ---
 *If you have any troubles with this product or just want to share your opinion, please feel free to contact me:*

@@ -5,13 +5,16 @@ import makePlain from './plain.js';
 // const makeFormat = (data, format) => formatters[format](data);
 
 const makeFormat = (data, format) => {
-  if (format === 'plain') {
-    return makePlain(data);
+  switch (format) {
+    case 'plain':
+      return makePlain(data);
+    case 'stylish':
+      return makeStylish(data);
+    case 'json':
+      return JSON.stringify(data);
+    default:
+      throw new Error(`${format} is unknown format!`);
   }
-  if (format === 'json') {
-    return JSON.stringify(data);
-  }
-  return makeStylish(data);
 };
 
 export default makeFormat;
