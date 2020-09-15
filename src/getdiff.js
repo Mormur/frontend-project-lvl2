@@ -4,7 +4,7 @@ const getDiff = (dataOfFile1, dataOfFile2) => {
   const keysOfFile1 = Object.keys(dataOfFile1);
   const keysOfFile2 = Object.keys(dataOfFile2);
 
-  const allSortedKeys = _.uniq([...keysOfFile1, ...keysOfFile2].sort());
+  const allSortedKeys = _.union(keysOfFile1, keysOfFile2).sort();
 
   const result = allSortedKeys.map((key) => {
     if (_.isObject(dataOfFile1[key]) && _.isObject(dataOfFile2[key])) {
