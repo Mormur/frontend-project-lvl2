@@ -8,11 +8,11 @@ const parsers = {
   ini: ini.parse,
 };
 
-const parser = (data, extension) => {
-  if (!_.has(parsers, extension)) {
-    throw new Error(`${extension} is unknown extension.`);
+const parser = (data, format) => {
+  if (!_.has(parsers, format)) {
+    throw new Error(`${format} is unknown data format.`);
   }
-  const parse = parsers[extension];
+  const parse = parsers[format];
   return parse(data);
 };
 

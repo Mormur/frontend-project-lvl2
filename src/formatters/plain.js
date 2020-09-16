@@ -11,27 +11,26 @@ const formatValue = (value) => {
 };
 
 const makePlain = (diff) => {
-  const dataFormat = (data, path = []) => {
-    const result = data.flatMap((item) => {
-      const actualPath = [...path, item.key];
-      const fullPath = actualPath.join('.');
-      switch (item.status) {
-        case 'deleted':
-          return `Property '${fullPath}' was removed`;
-        case 'added':
-          return `Property '${fullPath}' was added with value: ${formatValue(item.newValue)}`;
-        case 'changed':
-          return `Property '${fullPath}' was updated. From ${formatValue(item.oldValue)} to ${formatValue(item.newValue)}`;
-        case 'tree':
-          return dataFormat(item.objects, actualPath);
-        case 'unchanged':
-          return [];
-        default:
-          throw new Error(`${item.status} is unknown status!`);
-      }
-    });
-    return result.join('\n');
-  };
+  const dataFormat = (data, path = []) => data.flatMap(({
+    key, type, oldValue, newValue, objects,
+  }) => {
+    const actualPath = [...path, key];
+    const fullPath = actualPath.join('.');
+    switch (type) {
+      case 'deleted':
+        return `Property '${fullPath}' was removed`;
+      case 'added':
+        return `Property '${fullPath}' was added with value: ${formatValue(newValue)}`;
+      case 'changed':
+        return `Property '${fullPath}' was updated. From ${formatValue(oldValue)} to ${formatValue(newValue)}`;
+      case 'tree':
+        return dataFormat(objects, actualPath);
+      case 'unchanged':
+        return [];
+      default:
+        throw new Error(`${type} is unknown status!`);
+    }
+  }).join('\n');
   return dataFormat(diff);
 };
 
